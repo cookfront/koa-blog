@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
-// import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('development'),
@@ -17,9 +17,12 @@ export default {
         path: __dirname + '/public/build',
         publicPath: 'http://localhost:3000/',
         filename: 'app.js',
-        chunkFilename: '[name]_[chunkhash:8].js'
+        chunkFilename: '[name].js'
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'public/src/view/app.html')
+        }),
         new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()

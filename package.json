@@ -19,7 +19,7 @@
     "watch:css": "onchange 'public/src/scss/*.scss' -- npm run build:css",
     "build:css": "npm run scss && npm run autoprefixer",
     "prebuild": "npm run clean-build && npm run lint",
-    "build": "node tools/build.js && npm run open:build",
+    "build": "babel-node tools/build.js && npm run open:build",
     "watch": ""
   },
   "devDependencies": {
@@ -45,6 +45,7 @@
     "eslint-watch": "^2.1.11",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.19.0",
     "node-sass": "^3.7.0",
     "nodemon": "^1.9.2",
     "npm-run-all": "^2.1.1",
@@ -63,6 +64,7 @@
   "author": "cookfront",
   "license": "MIT",
   "dependencies": {
+    "config": "^1.21.0",
     "koa": "^1.2.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

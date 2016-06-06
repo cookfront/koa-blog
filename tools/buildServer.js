@@ -11,11 +11,11 @@ browserSync({
         port: 3001
     },
     server: {
-        baseDir: 'build'
+        baseDir: 'public/build'
     },
 
     files: [
-        'src/*.html'
+        'public/src/view/*.html'
     ],
 
     middleware: [historyApiFallback()]
