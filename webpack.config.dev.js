@@ -15,13 +15,13 @@ export default {
     entry: __dirname + '/public/src/js/app.js',
     output: {
         path: __dirname + '/public/build',
-        publicPath: 'http://localhost:3000/',
+        publicPath: 'http://localhost:3000/js',
         filename: 'app.js',
         chunkFilename: '[name].js'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'public/src/view/app.html')
+            template: path.join(__dirname, 'public/src/view/index.html')
         }),
         new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),

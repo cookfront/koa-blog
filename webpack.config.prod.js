@@ -17,7 +17,7 @@ export default {
     output: {
         path: __dirname + '/public/build',
         publicPath: 'http://localhost:3000/',
-        filename: 'app_[hash].js',
+        filename: 'app_[hash:8].js',
         chunkFilename: '[name]_[chunkhash:8].js'
     },
     plugins: [
