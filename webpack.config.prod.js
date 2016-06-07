@@ -15,8 +15,8 @@ export default {
     target: 'web',
     entry: __dirname + '/public/src/js/app.js',
     output: {
-        path: __dirname + '/public/build',
-        publicPath: 'http://localhost:3000/',
+        path: __dirname + '/public/build/js',
+        publicPath: 'http://localhost:8888/',
         filename: 'app_[hash:8].js',
         chunkFilename: '[name]_[chunkhash:8].js'
     },

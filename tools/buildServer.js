@@ -6,16 +6,10 @@ import historyApiFallback from 'connect-history-api-fallback';
 
 // Run Browsersync
 browserSync({
-    port: 3000,
-    ui: {
-        port: 3001
-    },
-    server: {
-        baseDir: 'public/build'
-    },
+    proxy: 'http://localhost:8888',
 
     files: [
-        'public/src/view/*.html'
+        'public/build/*.html'
     ],
 
     middleware: [historyApiFallback()]

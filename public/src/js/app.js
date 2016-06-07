@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 ReactDOM.render(
 	<div className="demo">
-		some
+		soss
 	</div>,
 	document.getElementById('app')
 );
