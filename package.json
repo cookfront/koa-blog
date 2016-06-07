@@ -6,7 +6,7 @@
   "scripts": {
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message remove-build",
-    "start": "npm-run-all --parallel serve open:src lint:watch",
+    "start": "npm-run-all --parallel open:src lint:watch",
     "serve": "nodemon app.js",
     "open:src": "babel-node tools/srcServer.js",
     "open:build": "babel-node tools/buildServer.js",

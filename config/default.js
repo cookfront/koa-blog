@@ -11,5 +11,11 @@ module.exports = Object.assign(require('../package.json'), {
     domain: 'http://localhost:' + PORT,
     path: {
     	html: __root('public/src/view')
+    },
+    dbConfig: {
+        host: 'localhost',
+        db_name: 'mock',
+        username: 'root',
+        password: '123456'
     }
 });
