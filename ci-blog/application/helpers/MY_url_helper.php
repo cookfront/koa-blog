@@ -3,7 +3,7 @@
 function loadCSS($name) {
 	switch (ENVIRONMENT) {
 		case 'development':
-			$url = base_url() . 'public/dist/css/' . $name . '.css';
+			$url = 'http://localhost:4000/dist/' . $name . '.css';
 			break;
 		case 'testing':
 		case 'production':
@@ -15,7 +15,7 @@ function loadCSS($name) {
 function loadJS($name) {
 	switch (ENVIRONMENT) {
 		case 'development':
-			$url = base_url() . 'public/dist/js/' . $name . '.js';
+			$url = 'http://localhost:4000/dist/' . $name . '.js';
 			break;
 		case 'testing':
 		case 'production':
