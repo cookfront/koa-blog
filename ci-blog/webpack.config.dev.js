@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('development'),
@@ -24,7 +25,8 @@ export default {
     plugins: [
         new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new ExtractTextPlugin('style.css')
     ],
     module: {
         loaders: [
@@ -38,9 +40,9 @@ export default {
                 loaders: ['file']
             },
             {
-                test: /(\.css|\.scss)$/,
+                test: /\.css$/,
                 include: path.join(__dirname, 'public/src'),
-                loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+                loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             }
         ]
     }

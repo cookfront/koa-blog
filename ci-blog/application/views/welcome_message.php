@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
-	<?php echo loadJS('app'); ?>
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -64,6 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		box-shadow: 0 0 8px #D0D0D0;
 	}
 	</style>
+	<?php echo loadCSS('style'); ?>
 </head>
 <body>
 
@@ -84,6 +84,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
-
+<?php echo loadJS('app'); ?>
 </body>
 </html>
