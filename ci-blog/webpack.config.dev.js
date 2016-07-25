@@ -11,10 +11,12 @@ export default {
     debug: true,
     devtool: 'cheap-module-eval-source-map',
     noInfo: true,
-    entry: [
-        'webpack-hot-middleware/client?reload=true',
-        './public/src/app.js'
-    ],
+    entry: {
+        app: [
+            'webpack-hot-middleware/client?reload=true',
+            './public/src/app.js'
+        ]
+    },
     target: 'web',
     output: {
         path: __dirname + '/public/dist',

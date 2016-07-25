@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Codeginiter Blog",
   "scripts": {
-    "server": "babel-node server.js"
+    "server": "babel-node tools/srcServer.js",
+    "build": "babel-node tools/build.js"
   },
   "keywords": [
     "Codeginiter",
@@ -21,17 +22,20 @@
     "redux": "^3.5.2"
   },
   "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-1": "^6.5.0",
+    "chalk": "^1.1.3",
     "css-loader": "^0.23.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.1"
+    "webpack-hot-middleware": "^2.12.1",
+    "webpack-md5-hash": "^0.0.5"
   }
 }
