@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "description": "Codeginiter Blog",
   "scripts": {
+    "start": "npm-run-all --parallel server lint:watch",
     "server": "babel-node tools/srcServer.js",
-    "build": "babel-node tools/build.js"
+    "prebuild": "npm run remove-dist && npm run lint",
+    "build": "babel-node tools/build.js",
+    "remove-dist": "rimraf ./public/dist",
+    "lint": "esw webpack.config.* ./public/src tools --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "keywords": [
     "Codeginiter",
@@ -31,8 +36,15 @@
     "babel-preset-stage-1": "^6.5.0",
     "chalk": "^1.1.3",
     "css-loader": "^0.23.1",
+    "eslint": "^3.1.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-watch": "^2.1.13",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "npm-run-all": "^2.3.0",
+    "rimraf": "^2.5.4",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.1",
