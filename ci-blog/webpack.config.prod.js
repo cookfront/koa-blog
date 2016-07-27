@@ -24,7 +24,7 @@ export default {
     target: 'web',
     output: {
         path: __dirname + '/public/dist',
-        publicPath: '/dist/',
+        publicPath: 'http://cdn.com/static/',
         filename: '[name]_[hash:8].js',
         chunkFilename: '[name]_[chunkhash:8].js'
     },
