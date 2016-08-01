@@ -3,6 +3,19 @@
 
 ## 博客列表(articleList.json)
 
+### 接口请求参数
+
+```json
+当前页数：currPage
+每页数据条数：pageSize
+搜素关键字：search
+分类Id：categoryId
+标签Id：tagId
+作者Id：authorId
+```
+
+### 接口结果返回
+
 ```json
 {
 	"code": 0,
@@ -19,8 +32,32 @@
 				"commentsNum": 5,
 			}
 		],
-		"perPage": 10,
+		"pageSize": 10,
 		"totalCount": 100
 	}
+}
+```
+
+## 添加文章
+
+### 接口请求参数
+
+```json
+文章标题：title
+文章内容：text
+是否允许评论：allowComment
+是否允许feed：allowFeed
+公开度：status
+分类：category
+标签：tags
+类型：type（post || page）
+```
+
+### 接口结果返回
+
+```json
+{
+	"code": 0,
+	"msg": ""
 }
 ```
