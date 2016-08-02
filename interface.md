@@ -3,7 +3,7 @@
 
 ## 文章接口
 
-### 文章列表
+### 文章列表(get /articles)
 
 #### 接口请求参数
 
@@ -40,7 +40,7 @@
 }
 ```
 
-### 新增和更新文章
+### 新增和更新文章(post /articles)
 
 #### 接口请求参数
 
@@ -64,7 +64,25 @@
 }
 ```
 
-### 根据ID获取文章信息
+### 根据ID获取文章信息(/articles/:id)
+
+#### 接口结果返回
+
+```json
+{
+	"code": 0,
+	"msg": "",
+	"data": {
+		"aid": 1,
+		"title": "article name",
+		"slug": "article slug",
+		"updated_at": "1469636493",
+		"text": "blog text",
+		"userName": "cookfront",
+		"commentsNum": 5,
+	}
+}
+```
 
 ### 根据多个ID批量删除文章
 
