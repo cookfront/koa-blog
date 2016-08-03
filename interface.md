@@ -8,17 +8,17 @@
 #### 接口请求参数
 
 ```json
-当前页数：currPage
+当前页数：page
 每页数据条数：pageSize
 搜素关键字：search
-分类Id：categoryId
-标签Id：tagId
-作者Id：authorId
 ```
+
+例如：`/articles?page=1&pageSize=20&search=xxx`
 
 #### 接口结果返回
 
 ```json
+// 成功时返回
 {
 	"code": 0,
 	"msg": "",
@@ -40,7 +40,7 @@
 }
 ```
 
-### 新增和更新文章(post /articles)
+### 新增文章(post /articles)
 
 #### 接口请求参数
 
@@ -64,7 +64,31 @@
 }
 ```
 
-### 根据ID获取文章信息(/articles/:id)
+### 更新文章(put /articles/:id)
+
+#### 接口请求参数
+
+```json
+文章标题：title
+文章内容：text
+是否允许评论：allowComment
+是否允许feed：allowFeed
+公开度：status
+分类：category
+标签：tags
+类型：type（post || page）
+```
+
+#### 接口结果返回
+
+```json
+{
+	"code": 0,
+	"msg": ""
+}
+```
+
+### 根据ID获取文章信息(get /articles/:id)
 
 #### 接口结果返回
 
@@ -84,41 +108,102 @@
 }
 ```
 
-### 根据多个ID批量删除文章
+### 根据ID删除文章(delete /articles/:id)
+
+#### 接口结果返回
+
+```json
+{
+	"code": 0,
+	"msg": ""
+}
+```
+
+### 根据分类或标签ID获取文章列表(get /articles?mid=12)
+
+#### 接口结果返回
+
+```json
+// 成功时返回
+{
+	"code": 0,
+	"msg": "",
+	"data": {
+		"list": [
+			{
+				"aid": 1,
+				"title": "article name",
+				"slug": "article slug",
+				"updated_at": "1469636493",
+				"text": "blog text",
+				"userName": "cookfront",
+				"commentsNum": 5,
+			}
+		],
+		"pageSize": 10,
+		"totalCount": 100
+	}
+}
+```
+
+### 根据用户ID获取文章列表(get /articles?uid=12)
+
+#### 接口结果返回
+
+```json
+// 成功时返回
+{
+	"code": 0,
+	"msg": "",
+	"data": {
+		"list": [
+			{
+				"aid": 1,
+				"title": "article name",
+				"slug": "article slug",
+				"updated_at": "1469636493",
+				"text": "blog text",
+				"userName": "cookfront",
+				"commentsNum": 5,
+			}
+		],
+		"pageSize": 10,
+		"totalCount": 100
+	}
+}
+```
 
 ## 分类接口
 
-### 根据分类ID获取文章列表
+### 获取分类列表(get /categories)
 
-### 获取分类列表
+### 新增和更新分类(pot /categories)
 
-### 新增和更新分类
+### 根据ID获取分类信息(get /categories/:id)
 
-### 根据ID获取分类信息
-
-### 根据多个ID批量删除分类
+### 根据ID删除分类(delete /categories/:id)
 
 ## 标签接口
 
-### 根据标签ID获取文章列表
+### 获取标签列表(get /tags)
 
-### 获取标签列表
+### 新增和更新标签(post /tags)
 
-### 新增和更新标签
+### 根据ID获取标签信息(get /tags/:id)
 
-### 根据ID获取标签信息
-
-### 根据多个ID批量删除标签
+### 根据ID删除标签(delete /tags/:id)
 
 ## 评论接口
 
-### 获取评论列表
+### 获取评论列表(get /comments)
 
-### 根据博客ID获取评论列表
+### 根据博客ID获取评论列表(get /comments?aid=12)
 
-### 新增和更新评论
+### 新增评论(post /comments)
 
-### 根据ID删除评论
+### 更新评论(put /comments/:id)
+
+### 根据ID删除评论(delete /comments/:id)
 
 ### 根据多个ID批量删除评论
 
@@ -130,10 +215,12 @@
 
 ## 用户接口
 
-### 获取用户列表
-
 ### 用户登录
 
-### 新增和更新用户
+### 获取用户列表(get /users)
 
-### 根据多个ID删除用户
+### 新增用户(post /users)
+
+### 更新用户(put /users/:id)
+
+### 根据ID删除用户(delte /users/:id)
