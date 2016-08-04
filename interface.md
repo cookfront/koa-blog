@@ -119,7 +119,7 @@
 }
 ```
 
-### 根据分类或标签ID获取文章列表(get /articles?mid=12)
+### 根据分类或标签ID获取文章列表(get /articles/metas/:metaID)
 
 #### 接口结果返回
 
@@ -146,7 +146,7 @@
 }
 ```
 
-### 根据用户ID获取文章列表(get /articles?uid=12)
+### 根据用户ID获取文章列表(get /users/:userId/articles)
 
 #### 接口结果返回
 
