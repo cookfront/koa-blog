@@ -8,13 +8,13 @@ const compiler = webpack(config);
 const app = express();
 
 app.use(WebpackDevMiddleware(compiler, {
-	publicPath: config.output.publicPath,
-	noInfo: true,
-	hot: true,
-	inline: true,
-	stats: {
-		colors: true
-	}
+  publicPath: config.output.publicPath,
+  noInfo: true,
+  hot: true,
+  inline: true,
+  stats: {
+    colors: true
+  }
 }));
 
 app.use(WebpackHotMiddleware(compiler));
