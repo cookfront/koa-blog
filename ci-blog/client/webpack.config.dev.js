@@ -14,12 +14,12 @@ export default {
     entry: {
         app: [
             'webpack-hot-middleware/client?reload=true',
-            './public/src/app.js'
+            './src/app.js'
         ]
     },
     target: 'web',
     output: {
-        path: __dirname + '/public/dist',
+        path: __dirname + '/dist',
         publicPath: '/dist',
         filename: 'app.js',
         chunkFilename: '[name].js'
@@ -28,13 +28,13 @@ export default {
         new webpack.DefinePlugin(GLOBALS),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('[name].css')
     ],
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                include: path.join(__dirname, 'public/src'),
+                include: path.join(__dirname, 'src'),
                 loaders: ['babel']
             },
             {
@@ -43,7 +43,7 @@ export default {
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname, 'public/src'),
+                include: path.join(__dirname, 'src'),
                 loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             }
         ]

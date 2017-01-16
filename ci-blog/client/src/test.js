@@ -3,15 +3,28 @@ import { render } from 'react-dom';
 import styles from './style.css';
 
 class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'abc'
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('receive');
+    this.setState({
+      text: nextProps.a
+    });
+  }
+
 	render() {
+    console.log('render');
 		return (
 			<div className={styles.test}>
-				xxxxx
+				{this.state.text}
 			</div>
 		);
 	}
 }
 
-render((
-	<Test />
-), document.getElementById('container'));
+export default Test;

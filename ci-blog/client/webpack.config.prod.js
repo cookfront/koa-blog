@@ -19,11 +19,11 @@ export default {
     devtool: 'source-map',
     noInfo: true,
     entry: {
-        app: './public/src/app.js'
+        app: './src/app.js'
     },
     target: 'web',
     output: {
-        path: __dirname + '/public/dist',
+        path: __dirname + '/dist',
         publicPath: 'http://cdn.com/static/',
         filename: '[name]_[hash:8].js',
         chunkFilename: '[name]_[chunkhash:8].js'
@@ -33,7 +33,7 @@ export default {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.DefinePlugin(GLOBALS),
         new webpack.NoErrorsPlugin(),
-        new ExtractTextPlugin('[name]_[contenthash:8].css'),
+        new ExtractTextPlugin('[name]_[hash:8].css'),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         assetsPluginInstance
@@ -42,7 +42,7 @@ export default {
         loaders: [
             {
                 test: /\.js$/,
-                include: path.join(__dirname, 'public/src'),
+                include: path.join(__dirname, 'src'),
                 loaders: ['babel']
             },
             {
@@ -51,7 +51,7 @@ export default {
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname, 'public/src'),
+                include: path.join(__dirname, 'src'),
                 loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             }
         ]
