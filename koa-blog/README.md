@@ -4,12 +4,14 @@
 
 - Server端：
   - Koa
-  - Sequelize
+  - Sequelize(ORM)
+  - Redis
 - Client端：
   - React
   - Redux
   - react-router
   - redux-saga
+  - Immutable.js
   - axios
   - Sass
 
