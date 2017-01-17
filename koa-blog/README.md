@@ -19,8 +19,8 @@
 ## 项目结构
 
 ```
-- server
-  - src
+- server：服务端代码
+  - src：源代码
     - configs：配置文件
     - controllers：控制层
     - models：模型层
@@ -28,11 +28,18 @@
     - services：服务层
     - routes.js：路由配置
     - app.js
-  - tests
-- client
+  - tests：单元测试用例
+- client：客户端代码
   - build：打包配置
+  - templates：模板文件
   - src：源代码
+    - actions
+    - components
+    - constants
+    - containers
     - reducers
+    - store
+    - index.js
   - tests：单元测试用例
   - styles：样式文件
 - package.json
