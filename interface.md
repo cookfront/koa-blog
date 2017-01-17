@@ -8,19 +8,18 @@
 
 ```json
 当前页数：page
-每页数据条数：pageSize
+每页数据条数：limit
 搜素关键字：search
 ```
 
-例如：`/articles?page=1&pageSize=20&search=xxx`
+例如：`/articles?page=1&limit=10&search=xxx`
 
 #### 接口结果返回
 
 ```json
 // 成功时返回
 {
-	"code": 0,
-	"msg": "",
+	"success": true,
 	"data": {
 		"list": [
 			{
@@ -39,7 +38,7 @@
 }
 ```
 
-### 新增文章(post /articles)
+### 新增或更新文章(post /articles)
 
 #### 接口请求参数
 
@@ -47,43 +46,17 @@
 文章标题：title
 文章内容：text
 是否允许评论：allowComment
-是否允许feed：allowFeed
 公开度：status
 分类：category
 标签：tags
-类型：type（post || page）
 ```
 
 #### 接口结果返回
 
 ```json
 {
-	"code": 0,
-	"msg": ""
-}
-```
-
-### 更新文章(put /articles/:id)
-
-#### 接口请求参数
-
-```json
-文章标题：title
-文章内容：text
-是否允许评论：allowComment
-是否允许feed：allowFeed
-公开度：status
-分类：category
-标签：tags
-类型：type（post || page）
-```
-
-#### 接口结果返回
-
-```json
-{
-	"code": 0,
-	"msg": ""
+	"success": true,
+	"cid": 1
 }
 ```
 
@@ -93,10 +66,9 @@
 
 ```json
 {
-	"code": 0,
-	"msg": "",
+	"success": true,
 	"data": {
-		"aid": 1,
+		"cid": 1,
 		"title": "article name",
 		"slug": "article slug",
 		"updated_at": "1469636493",
@@ -113,19 +85,26 @@
 
 ```json
 {
-	"code": 0,
+	"success": true,
 	"msg": ""
 }
 ```
 
-### 根据分类或标签ID获取文章列表(get /articles/metas/:metaID)
+### 根据分类或标签ID获取文章列表(get /articles/meta/:metaID)
+
+#### 接口请求参数
+
+```json
+当前页数：page
+每页数据条数：limit
+搜素关键字：search
+```
 
 #### 接口结果返回
 
 ```json
-// 成功时返回
 {
-	"code": 0,
+	"success": true,
 	"msg": "",
 	"data": {
 		"list": [
@@ -145,14 +124,21 @@
 }
 ```
 
-### 根据用户ID获取文章列表(get /users/:userId/articles)
+### 根据用户ID获取文章列表(get /articles/author/:userId)
+
+#### 接口请求参数
+
+```json
+当前页数：page
+每页数据条数：limit
+搜素关键字：search
+```
 
 #### 接口结果返回
 
 ```json
-// 成功时返回
 {
-	"code": 0,
+	"success": true,
 	"msg": "",
 	"data": {
 		"list": [
