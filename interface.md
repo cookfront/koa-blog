@@ -10,9 +10,10 @@
 当前页数：page
 每页数据条数：limit
 搜素关键字：search
+分类或标签Id：mid
 ```
 
-例如：`/articles?page=1&limit=10&search=xxx`
+例如：`/articles?page=1&limit=10&search=xxx&mid=1`
 
 #### 接口结果返回
 
@@ -90,40 +91,6 @@
 }
 ```
 
-### 根据分类或标签ID获取文章列表(get /articles/meta/:metaID)
-
-#### 接口请求参数
-
-```json
-当前页数：page
-每页数据条数：limit
-搜素关键字：search
-```
-
-#### 接口结果返回
-
-```json
-{
-	"success": true,
-	"msg": "",
-	"data": {
-		"list": [
-			{
-				"aid": 1,
-				"title": "article name",
-				"slug": "article slug",
-				"updated_at": "1469636493",
-				"text": "blog text",
-				"userName": "cookfront",
-				"commentsNum": 5,
-			}
-		],
-		"pageSize": 10,
-		"totalCount": 100
-	}
-}
-```
-
 ### 根据用户ID获取文章列表(get /articles/author/:userId)
 
 #### 接口请求参数
@@ -132,6 +99,7 @@
 当前页数：page
 每页数据条数：limit
 搜素关键字：search
+分类或标签Id：mid
 ```
 
 #### 接口结果返回
