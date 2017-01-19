@@ -23,7 +23,11 @@ var contentService = {
    * @param {number} id 文章cid
    */
   deleteContentById(id) {
-
+    return Content.destroy({
+      where: {
+        cid: id
+      }
+    });
   }
 };
 

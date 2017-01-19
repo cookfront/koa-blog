@@ -5,6 +5,9 @@
 - Server端：
   - koa
   - koa-router
+  - koa-cors
+  - koa-logger
+  - mysql
   - sequelize(ORM)
   - redis
 - Client端：

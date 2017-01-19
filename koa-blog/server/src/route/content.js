@@ -9,5 +9,6 @@ const router = Router({
 });
 
 router.get('/:id', contentController.fetchContentById);
+router.delete('/:id', contentController.deleteContentById);
 
 module.exports = router;
