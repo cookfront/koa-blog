@@ -15,4 +15,4 @@ fs
     router.use(route.routes(), route.allowedMethods());
   });
 
-export default router;
+module.exports = router;

@@ -14,8 +14,6 @@ var contentService = {
       where: {
         cid: id
       }
-    }).then((article) => {
-      console.log(article);
     });
   },
 

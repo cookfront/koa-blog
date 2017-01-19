@@ -8,4 +8,6 @@ const router = Router({
   prefix: '/articles'
 });
 
+router.get('/:id', contentController.fetchContentById);
+
 module.exports = router;
