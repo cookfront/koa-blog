@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize');
-var config = require('./blogConfig');
 
 // 根据NODE_ENV获取配置
-var blogConfig = process.env.NODE_ENV === 'production' ? config.prod : config.dev;
+var env = process.env.NODE_ENV || 'development';
+var blogConfig = env === 'development' ? require('./development') : require('./production');
 
 var mysqlConfig = blogConfig.mysql;
 var sequelize = new Sequelize(
@@ -25,5 +25,5 @@ var sequelize = new Sequelize(
   }
 );
 
-module.exports = sequelize;
+module.exports.sequelize = sequelize;
 module.exports.port = blogConfig.port;

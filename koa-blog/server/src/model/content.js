@@ -132,4 +132,4 @@ var ContentModel = sequelize.define('typecho_contents', {
   }
 });
 
-module.exports.ContentModel = ContentModel;
+module.exports = ContentModel;
