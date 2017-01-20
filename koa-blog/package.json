@@ -11,6 +11,13 @@
     "redux-saga",
     "mocha"
   ],
+  "scripts": {
+    "lint": "",
+    "test:client": "",
+    "test:server": "NODE_ENV=test mocha --reporter spec -r should --timeout 10000 server/tests/*",
+    "test:cover": "NODE_ENV=test istanbul cover --preserve-comments _mocha -- -r should --reporter spec --timeout 10000 server/tests/*",
+    "test": ""
+  },
   "author": "cookfront <cookfront@gmail.com>",
   "dependencies": {
     "axios": "^0.15.3",
@@ -27,5 +34,13 @@
     "redux": "^3.6.0",
     "redux-saga": "^0.14.2",
     "sequelize": "^3.29.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
+    "supertest": "^2.0.1",
+    "webpack": "^2.2.0",
+    "webpack-merge": "^2.4.0"
   }
 }

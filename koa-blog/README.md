@@ -2,6 +2,7 @@
 
 技术栈：
 
+```
 - Server端：
   - koa
   - koa-router
@@ -17,7 +18,9 @@
   - redux-saga
   - immutable.js
   - axios
-  - sass
+  - postcss
+  - webpack2
+```
 
 ## 项目结构
 
