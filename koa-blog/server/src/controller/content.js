@@ -2,41 +2,35 @@
  * 文章的controller层
  */
 var ContentService = require('../service/content');
+var bodyFormat = require('../utils/bodyFormat');
 
 var ContentController = {
+  /**
+   * 根据id获取文章详情
+   */
   fetchContentById: function* () {
     var id = this.params.id;
     var content;
 
     try {
       content = yield ContentService.fetchContentById(id);
-      this.body = {
-        success: true,
-        data: content
-      };
+      this.body = bodyFormat.formatSuccessBody(content);
     } catch (e) {
-      this.status = 500;
-      this.body = {
-        success: false,
-        message: e.message
-      };
+      this.body = bodyFormat.formatErrorBody(e.message);
     }
   },
 
+  /**
+   * 根据id删除对应文章
+   */
   deleteContentById: function* () {
     var id = this.params.id;
 
     try {
       yield ContentService.deleteContentById(id);
-      this.body = {
-        success: true,
-        id: id
-      };
+      this.body = bodyFormat.formatSuccessBody(id, 'id');
     } catch (e) {
-      this.body = {
-        success: false,
-        message: e.message
-      };
+      this.body = bodyFormat.formatErrorBody(e.message);
     }
   }
 };

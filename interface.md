@@ -87,7 +87,7 @@
 ```json
 {
 	"success": true,
-	"msg": ""
+	"id": 1
 }
 ```
 
