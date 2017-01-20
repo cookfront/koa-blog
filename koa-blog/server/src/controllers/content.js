@@ -1,7 +1,7 @@
 /**
  * 文章的controller层
  */
-var ContentService = require('../service/content');
+var ContentService = require('../services/content');
 var bodyFormat = require('../utils/bodyFormat');
 
 var ContentController = {

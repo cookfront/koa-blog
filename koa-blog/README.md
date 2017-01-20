@@ -42,7 +42,7 @@
     - containers
     - reducers
     - store
-    - index.js
+    - app.js
   - tests：单元测试用例
   - styles：样式文件
 - package.json

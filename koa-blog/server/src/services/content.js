@@ -1,7 +1,7 @@
 /**
  * 文章的service层
  */
-var Content = require('../model/content');
+var Content = require('../models/content');
 
 var contentService = {
   /**

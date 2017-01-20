@@ -2,7 +2,7 @@
  * 文章对应的路由
  */
 var Router = require('koa-router');
-var contentController = require('../controller/content');
+var contentController = require('../controllers/content');
 
 const router = Router({
   prefix: '/articles'
